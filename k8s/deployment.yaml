@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: misha_remeslo
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: misha_remeslo
+  template:
+    metadata:
+      labels:
+        app: misha_remeslo
+    spec:
+      containers:
+      - name: misha_remeslo
+        image: misharem/misha_remeslo:latest
+        ports:
+        - containerPort: 8080
